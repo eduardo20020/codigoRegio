@@ -101,9 +101,9 @@
                             <h3 class="text-white text-xl font-bold mb-2">Gestion</h3>
                             <p class="text-gray-300 text-center px-4 mb-4">Sistema de gestion de tickets</p>
                             <div class="flex space-x-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
-                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Node.js</span>
-                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Laravel</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">PHP</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">MySQL</span>
                             </div>
                             <a href="#" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
                                 Ver Detalles
@@ -131,8 +131,8 @@
                             <h3 class="text-white text-xl font-bold mb-2">Automatizacion</h3>
                             <p class="text-gray-300 text-center px-4 mb-4">Plataforma para compartir contenido multimedia</p>
                             <div class="flex space-x-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Vue.js</span>
-                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Firebase</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">N8N</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Python</span>
                             </div>
                             <a href="#" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
                                 Ver Detalles
@@ -299,13 +299,17 @@
                         <h3 class="text-xl font-semibold mb-4">Mis Habilidades</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">React</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
                             <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">HTML5</span>
                             <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">CSS3</span>
                             <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Tailwind</span>
-                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">MongoDB</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
                             <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Git</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">n8n</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
+
                         </div>
                     </div>
                     
