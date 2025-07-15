@@ -233,7 +233,7 @@
                         <h3 class="text-xl font-semibold mb-3">Mi Transición a Desarrollo Fullstack</h3>
                         <p class="text-gray-600 mb-4">Cómo pasé de ser desarrollador frontend a dominar también el backend.</p>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
+                            <a href="/articulos/transicion-a-fullstack.html" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 Leer más <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                             <span class="text-sm text-gray-500">12 min lectura</span>
@@ -255,7 +255,7 @@
                         <h3 class="text-xl font-semibold mb-3">Tailwind CSS vs. CSS tradicional</h3>
                         <p class="text-gray-600 mb-4">Comparativa detallada entre Tailwind CSS y el enfoque tradicional con CSS.</p>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
+                            <a href="/articulos/tailwind-vs-css-tradicional.html" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 Leer más <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                             <span class="text-sm text-gray-500">10 min lectura</span>

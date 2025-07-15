@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS vs. CSS tradicional | Blog de Desarrollo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+        
+        .demo-component {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            background-color: #f8fafc;
+        }
+        
+        .highlight {
+            background-color: #fffbdd;
+            padding: 0.2rem;
+            border-radius: 0.2rem;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #4f46e5;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Animación para el demo de productividad */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        .typing-demo {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40) 1s 1 normal both;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-blue-600 to-teal-500 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">Tailwind CSS vs. CSS tradicional</h1>
+                    <p class="text-xl opacity-90">Análisis comparativo para elegir el mejor enfoque</p>
+                </div>
+                <div class="hidden md:block">
+                    <i class="fab fa-css3-alt text-6xl opacity-20"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold text-blue-600">Mi Blog Dev</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-blue-600">Inicio</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">CSS</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Frameworks</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Tutoriales</a>
+                </div>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center mb-6">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Autor" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold">Laura Frontend</p>
+                        <p class="text-gray-500 text-sm">Publicado el 22 de julio, 2023 · 10 min de lectura</p>
+                    </div>
+                </div>
+                
+                <div class="prose max-w-none">
+                    <p class="text-lg text-gray-700 mb-6">En el mundo del desarrollo frontend, la elección entre Tailwind CSS y CSS tradicional es un debate constante. ¿Es mejor la simplicidad de las clases utilitarias o el control absoluto del CSS personalizado? En este artículo compararemos ambos enfoques en profundidad.</p>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-blue-500 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    <span class="font-semibold">Nota importante:</span> No hay una respuesta universal. La mejor opción depende del proyecto, equipo y preferencias personales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Comparación de sintaxis</h2>
+                    <p>La diferencia más evidente está en cómo escribimos los estilos:</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 mt-4">
+                        <div class="flex-1">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-gray-800 mb-2">CSS Tradicional</h3>
+                                <div class="code-block">
+                                    <pre><code>/* styles.css */
+.card {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}</code></pre>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-700">HTML correspondiente:</p>
+                                    <div class="code-block">
+                                        <pre><code>&lt;div class="card"&gt;
+  &lt;h3 class="card-title"&gt;Título&lt;/h3&gt;
+  &lt;p&gt;Contenido...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-blue-800 mb-2">Tailwind CSS</h3>
+                                <div class="code-block">
+                                    <pre><code>&lt;!-- No se necesita CSS separado --&gt;
+&lt;div class="rounded-xl p-6 bg-white shadow-sm"&gt;
+  &lt;h3 class="text-xl font-semibold mb-2"&gt;Título&lt;/h3&gt;
+  &lt;p&gt;Contenido...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-sm text-blue-700">Ventajas:</p>
+                                    <ul class="list-disc pl-5 text-sm text-blue-700 space-y-1">
+                                        <li>No hay cambio de contexto entre HTML y CSS</li>
+                                        <li>No necesita inventar nombres de clases</li>
+                                        <li>Estilos directamente visibles en el markup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Productividad en el desarrollo</h2>
+                    <p>Tailwind promete mayor velocidad de desarrollo, pero ¿es realmente así?</p>
+                    
+                    <div class="demo-component">
+                        <h3 class="font-semibold mb-2">Demo: Velocidad de implementación</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border rounded-lg p-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                    <h4 class="font-medium">CSS Tradicional</h4>
+                                </div>
+                                <div class="relative">
+                                    <div class="h-40 bg-gray-100 rounded flex items-center justify-center">
+                                        <p class="typing-demo text-gray-500">1. Abrir archivo CSS... 2. Escribir reglas... 3. Nombrar clases... 4. Volver al HTML...</p>
+                                    </div>
+                                    <div class="absolute bottom-2 right-2 bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Más pasos, más tiempo</div>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg p-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                    <h4 class="font-medium">Tailwind CSS</h4>
+                                </div>
+                                <div class="relative">
+                                    <div class="h-40 bg-gray-100 rounded flex items-center justify-center">
+                                        <p class="text-gray-500">Estilos directamente en el HTML con clases utilitarias</p>
+                                    </div>
+                                    <div class="absolute bottom-2 right-2 bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Flujo más rápido</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-triangle text-yellow-500 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <span class="font-semibold">Contrapunto:</span> La curva de aprendizaje de Tailwind puede ser empinada al principio, especialmente memorizando todas las clases utilitarias.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">3. Mantenibilidad y escalabilidad</h2>
+                    <p>¿Qué pasa cuando el proyecto crece?</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 mt-4">
+                        <div class="flex-1">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-gray-800 mb-2">CSS Tradicional</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2 mt-0.5">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <span>Estructura clara con archivos CSS separados</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2 mt-0.5">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <span>Fácil hacer cambios globales</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-5 w-5 text-red-500 mr-2 mt-0.5">
+                                            <i class="fas fa-times-circle"></i>
+                                        </div>
+                                        <span>Puede llevar a "especificidad hell" y !important</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-blue-800 mb-2">Tailwind CSS</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2 mt-0.5">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <span>No hay problemas de especificidad</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2 mt-0.5">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <span>Fácil de mantener con componentes reutilizables</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 h-5 w-5 text-red-500 mr-2 mt-0.5">
+                                            <i class="fas fa-times-circle"></i>
+                                        </div>
+                                        <span>Markup puede volverse verboso</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-semibold mb-2">Extracto de componente real con Tailwind:</h3>
+                        <div class="code-block">
+                            <pre><code>&lt;button class="inline-flex items-center px-4 py-2 border border-transparent 
+text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 
+hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
+focus:ring-blue-500"&gt;
+  &lt;svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 20 20" fill="currentColor"&gt;
+    &lt;path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 
+    11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" /&gt;
+  &lt;/svg&gt;
+  Nuevo proyecto
+&lt;/button&gt;</code></pre>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">Solución: Extraer a componentes (React, Vue, etc.) o usar @apply en CSS.</p>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">4. Personalización y diseño único</h2>
+                    <p>¿Puedes crear diseños personalizados con Tailwind?</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div class="border rounded-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 text-white">
+                                <h3 class="font-semibold">CSS Tradicional</h3>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-700 mb-3">Total libertad para crear cualquier diseño con CSS puro, animaciones complejas y efectos únicos.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                                    <span>Ideal para diseños altamente personalizados</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-500 to-teal-400 p-4 text-white">
+                                <h3 class="font-semibold">Tailwind CSS</h3>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-700 mb-3">Limitado por el sistema de diseño, pero extensible con configuración y plugins.</p>
+                                <div class="code-block text-xs mt-2">
+                                    <pre><code>// tailwind.config.js
+theme: {
+  extend: {
+    colors: {
+      brand: {
+        light: '#3fbaeb',
+        DEFAULT: '#0fa9e6',
+        dark: '#0c87b8',
+      }
+    }
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 border rounded-lg bg-gray-50">
+                        <h3 class="font-semibold mb-2">Ejemplo de diseño personalizado con Tailwind:</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-red-500 flex items-center justify-center text-white mb-4">
+                                    <i class="fas fa-star text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-lg mb-2">Diseño único</h4>
+                                <p class="text-gray-600">Con combinación de clases utilitarias y algo de imaginación</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md rotate-1 hover:rotate-0 transition duration-300">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white mb-4">
+                                    <i class="fas fa-lightbulb text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-lg mb-2">Efectos especiales</h4>
+                                <p class="text-gray-600">Transformaciones, animaciones y gradientes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">5. Tamaño del bundle y rendimiento</h2>
+                    <p>Impacto en el rendimiento de la aplicación</p>
+                    
+                    <div class="overflow-x-auto mt-4">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Métrica</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">CSS Tradicional</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tailwind CSS</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Tamaño inicial</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Variable (solo lo que escribes)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">~40KB min+gzip (con PurgeCSS)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CSS no utilizado</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Puede acumularse</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Eliminado con PurgeCSS</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Rendimiento en runtime</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Óptimo</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Óptimo (solo clases utilitarias)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-4 my-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-chart-line text-purple-500 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-purple-700">
+                                    <span class="font-semibold">Dato interesante:</span> Tailwind con PurgeCSS puede generar archivos CSS más pequeños que enfoques tradicionales en proyectos grandes, ya que solo incluye las clases realmente usadas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">6. ¿Cuándo elegir cada uno?</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div class="border rounded-lg overflow-hidden">
+                            <div class="bg-gray-800 p-4 text-white">
+                                <h3 class="font-semibold">CSS Tradicional es mejor cuando...</h3>
+                            </div>
+                            <div class="p-4">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>Tienes un equipo de diseñadores que trabajan con CSS/Sass</li>
+                                    <li>El proyecto requiere diseños altamente personalizados</li>
+                                    <li>Prefieres separación estricta de preocupaciones</li>
+                                    <li>Trabajas con un sistema de diseño existente</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg overflow-hidden">
+                            <div class="bg-blue-600 p-4 text-white">
+                                <h3 class="font-semibold">Tailwind CSS es mejor cuando...</h3>
+                            </div>
+                            <div class="p-4">
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li>Quieres máxima velocidad de desarrollo</li>
+                                    <li>Trabajas con componentes (React, Vue, etc.)</li>
+                                    <li>Prefieres consistencia en el diseño</li>
+                                    <li>No quieres inventar nombres de clases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusión</h2>
+                    <p class="mb-4">Ambos enfoques tienen sus ventajas y desventajas. La decisión final depende de:</p>
+                    <ul class="list-disc pl-6 space-y-2 mb-6">
+                        <li><span class="font-semibold">Tipo de proyecto</span> - Pequeño vs grande, diseño único vs consistente</li>
+                        <li><span class="font-semibold">Equipo</span> - Experiencia y preferencias</li>
+                        <li><span class="font-semibold">Flujo de trabajo</span> - Componentes vs páginas</li>
+                        <li><span class="font-semibold">Mantenimiento</span> - ¿Quién mantendrá el código?</li>
+                    </ul>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mt-8 border border-blue-100">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full">
+                                <i class="fas fa-balance-scale text-blue-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-blue-800">¿No estás seguro?</h3>
+                                <p class="text-blue-700 mt-2">Prueba este enfoque híbrido:</p>
+                                <ul class="mt-2 space-y-1">
+                                    <li class="text-blue-700">• Usa Tailwind para layout y utilidades (padding, margin, etc.)</li>
+                                    <li class="text-blue-700">• Combina con CSS tradicional para componentes complejos</li>
+                                    <li class="text-blue-700">• Extrae patrones repetidos con @apply o componentes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 px-6 py-4 border-t">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-4">
+                        <button class="text-gray-500 hover:text-blue-600">
+                            <i class="far fa-thumbs-up"></i> <span class="ml-1">98</span>
+                        </button>
+                        <button class="text-gray-500 hover:text-blue-600">
+                            <i class="far fa-comment"></i> <span class="ml-1">15</span>
+                        </button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="text-gray-500 hover:text-blue-600">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                        <button class="text-gray-500 hover:text-blue-600">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="px-6 py-4 bg-white border-t">
+                <h3 class="font-semibold text-lg mb-4">Comentarios (4)</h3>
+                <div class="space-y-4">
+                    <div class="flex">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Usuario" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-semibold">Carlos Dev</span>
+                                    <span class="text-xs text-gray-500">Hace 1 día</span>
+                                </div>
+                                <p class="text-gray-700">Excelente comparativa. Yo usé Tailwind en mi último proyecto y la productividad aumentó mucho, aunque al principio cuesta acostumbrarse.</p>
+                                <button class="text-sm text-blue-600 mt-1">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Usuario" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-semibold">Ana Diseñadora</span>
+                                    <span class="text-xs text-gray-500">Hace 3 días</span>
+                                </div>
+                                <p class="text-gray-700">Como diseñadora, prefiero CSS tradicional para tener más control creativo. Tailwind me parece muy limitante para diseños innovadores.</p>
+                                <button class="text-sm text-blue-600 mt-1">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <textarea class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-400" rows="3" placeholder="Añade un comentario..."></textarea>
+                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Publicar comentario</button>
+                </div>
+            </div>
+        </article>
+        
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Artículos relacionados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://source.unsplash.com/random/400x200/?css" alt="CSS" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-blue-600">CSS</span>
+                        <h3 class="font-semibold text-lg mt-1 mb-2">Novedades en CSS 2023</h3>
+                        <p class="text-gray-600 text-sm">Las nuevas características de CSS que debes conocer para este año.</p>
+                        <div class="flex items-center mt-3 text-sm text-gray-500">
+                            <i class="far fa-clock mr-1"></i> 6 min de lectura
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://source.unsplash.com/random/400x200/?design" alt="Diseño" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-blue-600">Diseño</span>
+                        <h3 class="font-semibold text-lg mt-1 mb-2">Sistemas de Diseño en Frontend</h3>
+                        <p class="text-gray-600 text-sm">Cómo implementar y mantener un sistema de diseño consistente.</p>
+                        <div class="flex items-center mt-3 text-sm text-gray-500">
+                            <i class="far fa-clock mr-1"></i> 8 min de lectura
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://source.unsplash.com/random/400x200/?framework" alt="Frameworks" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-blue-600">Frameworks</span>
+                        <h3 class="font-semibold text-lg mt-1 mb-2">Comparativa: Bootstrap vs Tailwind</h3>
+                        <p class="text-gray-600 text-sm">Ventajas y desventajas de los dos frameworks CSS más populares.</p>
+                        <div class="flex items-center mt-3 text-sm text-gray-500">
+                            <i class="far fa-clock mr-1"></i> 5 min de lectura
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mi Blog Dev</h3>
+                    <p class="text-gray-400">Artículos y tutoriales sobre desarrollo web frontend.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categorías</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">CSS</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">JavaScript</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Frameworks</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Diseño</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces útiles</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Documentación</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Herramientas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Comunidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cursos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Suscríbete</h4>
+                    <p class="text-gray-400 mb-2">Recibe los últimos artículos en tu correo.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Tu email" class="px-3 py-2 text-gray-800 rounded-l focus:outline-none w-full">
+                        <button class="bg-blue-600 px-4 py-2 rounded-r hover:bg-blue-700">Enviar</button>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Mi Blog Dev. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animación para el demo de productividad
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reiniciar animación al hacer clic en el demo
+            const demoElement = document.querySelector('.typing-demo');
+            if (demoElement) {
+                setInterval(() => {
+                    demoElement.style.animation = 'none';
+                    void demoElement.offsetWidth; // Trigger reflow
+                    demoElement.style.animation = 'typing 3s steps(40) 1s 1 normal both';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
