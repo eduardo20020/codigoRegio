@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Uso | Nombre de la Empresa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Animation for section headers */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        /* Custom checkbox for acceptance */
+        .accept-checkbox {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .accept-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+        
+        .accept-checkbox:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        
+        .accept-checkbox input:checked ~ .checkmark {
+            background-color: #3b82f6;
+        }
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        .accept-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        .accept-checkbox .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-shield-alt text-blue-500 text-2xl mr-3"></i>
+                <h1 class="text-2xl font-bold text-gray-800">Nombre de la Empresa</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/" class="text-gray-600 hover:text-blue-500 transition">Inicio</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500 transition">Servicios</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500 transition">Contacto</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Términos de Uso</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Última actualización: <span class="font-medium">15 de junio, 2023</span></p>
+            </div>
+
+            <!-- Terms Content -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Table of Contents -->
+                <div class="bg-gray-50 p-6 border-b">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Tabla de Contenidos</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <li><a href="#introduction" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 1. Introducción</a></li>
+                        <li><a href="#accounts" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 2. Cuentas de Usuario</a></li>
+                        <li><a href="#content" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 3. Contenido del Usuario</a></li>
+                        <li><a href="#prohibited" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 4. Conductas Prohibidas</a></li>
+                        <li><a href="#termination" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 5. Terminación</a></li>
+                        <li><a href="#disclaimer" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 6. Renuncia de Garantías</a></li>
+                        <li><a href="#limitation" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 7. Limitación de Responsabilidad</a></li>
+                        <li><a href="#changes" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> 8. Cambios a los Términos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Terms Sections -->
+                <div class="p-6 md:p-8">
+                    <!-- Introduction -->
+                    <section id="introduction" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Introducción</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Bienvenido a nuestros Términos de Uso. Estos términos y condiciones ("Términos") rigen su uso de nuestro sitio web, servicios y aplicaciones (colectivamente, el "Servicio").</p>
+                            <p class="mb-4 text-gray-700">Al acceder o utilizar el Servicio, usted acepta estar sujeto a estos Términos. Si no está de acuerdo con alguna parte de los términos, no debe utilizar nuestro Servicio.</p>
+                            <p class="text-gray-700">Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por nosotros. No tenemos control ni asumimos responsabilidad por el contenido, políticas de privacidad o prácticas de sitios web o servicios de terceros.</p>
+                        </div>
+                    </section>
+
+                    <!-- User Accounts -->
+                    <section id="accounts" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Cuentas de Usuario</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Cuando crea una cuenta con nosotros, debe proporcionarnos información precisa, completa y actualizada en todo momento. El incumplimiento de este requisito constituye una violación de los Términos, que puede resultar en la terminación inmediata de su cuenta en nuestro Servicio.</p>
+                            <p class="mb-4 text-gray-700">Usted es responsable de salvaguardar la contraseña que utiliza para acceder al Servicio y de cualquier actividad o acción bajo su contraseña, ya sea que su contraseña esté con nuestro Servicio o con un servicio de terceros.</p>
+                            <p class="text-gray-700">Usted acepta no revelar su contraseña a ningún tercero. Debe notificarnos inmediatamente al tener conocimiento de cualquier violación de seguridad o uso no autorizado de su cuenta.</p>
+                        </div>
+                    </section>
+
+                    <!-- User Content -->
+                    <section id="content" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Contenido del Usuario</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Nuestro Servicio le permite publicar, vincular, almacenar, compartir y poner a disposición de otro modo cierta información, texto, gráficos, videos u otro material ("Contenido"). Usted es responsable del Contenido que publique en o a través del Servicio, incluyendo su legalidad, confiabilidad y adecuación.</p>
+                            <p class="mb-4 text-gray-700">Al publicar Contenido en o a través del Servicio, usted declara y garantiza que: (i) el Contenido es suyo (usted es su dueño) o tiene el derecho de usarlo y otorgarnos los derechos y la licencia según lo previsto en estos Términos, y (ii) la publicación de su Contenido en o a través del Servicio no viola los derechos de privacidad, derechos de publicidad, derechos de autor, derechos contractuales o cualquier otro derecho de ninguna persona o entidad.</p>
+                            <p class="text-gray-700">Nos reservamos el derecho de eliminar cualquier Contenido que, a nuestro juicio, viole estos Términos o que sea dañino, ofensivo o que de otro modo viole nuestras políticas.</p>
+                        </div>
+                    </section>
+
+                    <!-- Prohibited Conduct -->
+                    <section id="prohibited" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">4</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Conductas Prohibidas</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Usted acepta no utilizar el Servicio para:</p>
+                            <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                                <li>Publicar contenido ilegal, difamatorio, abusivo, obsceno, amenazante o acosador</li>
+                                <li>Violar cualquier ley, regulación u ordenanza</li>
+                                <li>Infringir derechos de propiedad intelectual o de privacidad</li>
+                                <li>Distribuir virus o cualquier otro código dañino</li>
+                                <li>Recopilar información de otros usuarios sin su consentimiento</li>
+                                <li>Interferir con la seguridad o el funcionamiento del Servicio</li>
+                                <li>Realizar actividades fraudulentas o engañosas</li>
+                            </ul>
+                            <p class="text-gray-700">Nos reservamos el derecho de investigar y procesar violaciones de cualquiera de los términos anteriores a nuestra entera discreción.</p>
+                        </div>
+                    </section>
+
+                    <!-- Termination -->
+                    <section id="termination" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">5</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Terminación</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Podemos terminar o suspender su cuenta y el acceso al Servicio de inmediato, sin previo aviso ni responsabilidad, bajo nuestra sola discreción, si usted incumple estos Términos.</p>
+                            <p class="mb-4 text-gray-700">Al terminar, su derecho a utilizar el Servicio cesará inmediatamente. Si desea terminar su cuenta, puede simplemente dejar de utilizar el Servicio.</p>
+                            <p class="text-gray-700">Todas las disposiciones de los Términos que por su naturaleza deberían sobrevivir a la terminación sobrevivirán, incluyendo, entre otras, disposiciones de propiedad, renuncias de garantía, indemnización y limitaciones de responsabilidad.</p>
+                        </div>
+                    </section>
+
+                    <!-- Disclaimer -->
+                    <section id="disclaimer" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">6</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Renuncia de Garantías</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Su uso del Servicio es bajo su propio riesgo. El Servicio se proporciona "TAL CUAL" y "SEGÚN DISPONIBILIDAD". Renunciamos expresamente a todas las garantías de cualquier tipo, ya sean expresas o implícitas, incluyendo, entre otras, las garantías implícitas de comerciabilidad, idoneidad para un propósito particular y no infracción.</p>
+                            <p class="text-gray-700">No garantizamos que el Servicio funcionará sin interrupciones, sea seguro o esté disponible en cualquier momento o lugar; que cualquier error o defecto será corregido; o que el Servicio esté libre de virus u otros componentes dañinos.</p>
+                        </div>
+                    </section>
+
+                    <!-- Limitation of Liability -->
+                    <section id="limitation" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">7</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Limitación de Responsabilidad</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">En ningún caso nosotros, ni nuestros directores, empleados, socios, agentes, proveedores o afiliados, seremos responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo, entre otros, pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, que resulten de:</p>
+                            <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                                <li>Su acceso o uso o incapacidad para acceder o utilizar el Servicio</li>
+                                <li>Cualquier conducta o contenido de cualquier tercero en el Servicio</li>
+                                <li>Cualquier contenido obtenido del Servicio</li>
+                                <li>Acceso no autorizado, uso o alteración de sus transmisiones o contenido</li>
+                            </ul>
+                            <p class="text-gray-700">Esta limitación de responsabilidad se aplicará ya sea que la responsabilidad se base en garantía, contrato, agravio (incluyendo negligencia) o cualquier otra teoría legal, incluso si hemos sido informados de la posibilidad de dichos daños.</p>
+                        </div>
+                    </section>
+
+                    <!-- Changes -->
+                    <section id="changes" class="mb-10 section-header">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">8</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Cambios a los Términos</h3>
+                        </div>
+                        <div class="pl-11">
+                            <p class="mb-4 text-gray-700">Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es importante, proporcionaremos un aviso con al menos 30 días de anticipación antes de que los nuevos términos entren en vigencia.</p>
+                            <p class="text-gray-700">Al continuar accediendo o utilizando nuestro Servicio después de que esas revisiones entren en vigencia, usted acepta estar sujeto a los términos revisados. Si no está de acuerdo con los nuevos términos, por favor deje de utilizar el Servicio.</p>
+                        </div>
+                    </section>
+
+                    <!-- Acceptance -->
+                    <div class="bg-blue-50 p-6 rounded-lg mt-12">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Aceptación de los Términos</h3>
+                        <div class="flex items-start">
+                            <label class="accept-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <span class="ml-3 text-gray-700">Al marcar esta casilla, reconozco que he leído, entendido y acepto todos los términos y condiciones establecidos anteriormente.</span>
+                        </div>
+                        <button class="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                            Aceptar Términos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">MiBlog</a>
+                    <p class="mt-2 text-sm">Compartiendo conocimiento y proyectos.</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Enlaces</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                            <li><a href="#proyectos" class="hover:text-white transition">Proyectos</a></li>
+                            <li><a href="#blog" class="hover:text-white transition">Blog</a></li>
+                            <li><a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/legal/privacidad.html" class="hover:text-white transition">Política de Privacidad</a></li>
+                            <li><a href="/legal/terminos.html" class="hover:text-white transition">Términos de Uso</a></li>
+                            <li><a href="/legal/cookies.html" class="hover:text-white transition">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 MiBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-opacity duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle (placeholder - would need actual implementation)
+        document.querySelector('.md\\:hidden').addEventListener('click', function() {
+            alert('Menú móvil se abriría aquí en una implementación completa');
+        });
+    </script>
+</body>
+</html>

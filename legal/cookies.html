@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 1024px) {
+            .legal-nav li:hover {
+                color: #3b82f6;
+                border-left: 3px solid #3b82f6;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-balance-scale text-blue-600 text-2xl mr-3"></i>
+                <h1 class="text-2xl font-bold text-gray-800">Área Legal</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="text-gray-600 hover:text-blue-600">Inicio</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600">Privacidad</a></li>
+                    <li><a href="#" class="text-blue-600 font-medium">Cookies</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600">Términos</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row">
+
+
+        <!-- Main Document -->
+        <main class="flex-1 bg-white rounded-lg shadow-sm p-6 lg:p-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-cookie-bite text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl lg:text-3xl font-bold text-gray-800">Política de Cookies</h1>
+                    <p class="text-gray-500">Última actualización: 15 de junio, 2023</p>
+                </div>
+            </div>
+
+            <div class="prose max-w-none text-gray-700">
+                <p class="mb-6">En esta política explicamos qué son las cookies, cómo las utilizamos y cómo puedes gestionarlas en nuestro sitio web.</p>
+
+                <!-- Accordion Sections -->
+                <div class="space-y-4">
+                    <!-- Section 1 -->
+                    <div class="border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                            <h2 class="text-lg font-semibold text-left">¿Qué son las cookies?</h2>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 border-t">
+                                <p>Las cookies son pequeños archivos de texto que los sitios web colocan en tu dispositivo para almacenar información sobre tu visita. Estas ayudan a que el sitio web funcione correctamente, mejoran la experiencia del usuario y proporcionan información a los propietarios del sitio.</p>
+                                <p class="mt-2">Las cookies pueden ser de sesión (se eliminan cuando cierras el navegador) o persistentes (permanecen en tu dispositivo durante un período de tiempo determinado).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                            <h2 class="text-lg font-semibold text-left">Cookies que utilizamos</h2>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 border-t">
+                                <h3 class="font-medium mb-2">1. Cookies esenciales</h3>
+                                <p>Estas cookies son necesarias para que el sitio web funcione correctamente. Permiten funciones básicas como la navegación por páginas y el acceso a áreas seguras.</p>
+                                
+                                <h3 class="font-medium mt-4 mb-2">2. Cookies de rendimiento</h3>
+                                <p>Estas cookies nos ayudan a entender cómo interactúan los visitantes con nuestro sitio web, recopilando información de forma anónima.</p>
+                                
+                                <h3 class="font-medium mt-4 mb-2">3. Cookies de funcionalidad</h3>
+                                <p>Permiten que el sitio web recuerde elecciones que haces (como tu nombre de usuario, idioma o región) para proporcionar características mejoradas.</p>
+                                
+                                <h3 class="font-medium mt-4 mb-2">4. Cookies de publicidad</h3>
+                                <p>Estas cookies rastrean la actividad online para ayudar a los anunciantes a mostrar publicidad más relevante.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                            <h2 class="text-lg font-semibold text-left">Gestión de cookies</h2>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 border-t">
+                                <p>Puedes controlar y/o eliminar las cookies como desees. Puedes eliminar todas las cookies que ya están en tu dispositivo y configurar la mayoría de los navegadores para que no se instalen.</p>
+                                <p class="mt-2">Para hacer esto, sigue las instrucciones proporcionadas por tu navegador (normalmente ubicadas en "Configuración" > "Privacidad" > "Cookies").</p>
+                                
+                                <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <a href="#" class="p-3 border rounded-lg hover:bg-gray-50 transition flex items-center">
+                                        <i class="fab fa-chrome text-xl mr-3 text-blue-600"></i>
+                                        <span>Chrome</span>
+                                    </a>
+                                    <a href="#" class="p-3 border rounded-lg hover:bg-gray-50 transition flex items-center">
+                                        <i class="fab fa-firefox text-xl mr-3 text-orange-600"></i>
+                                        <span>Firefox</span>
+                                    </a>
+                                    <a href="#" class="p-3 border rounded-lg hover:bg-gray-50 transition flex items-center">
+                                        <i class="fab fa-safari text-xl mr-3 text-blue-400"></i>
+                                        <span>Safari</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                            <h2 class="text-lg font-semibold text-left">Cambios en esta política</h2>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 border-t">
+                                <p>Podemos actualizar esta Política de Cookies ocasionalmente para reflejar cambios en nuestras prácticas o por otros motivos operativos, legales o regulatorios. Te recomendamos que revises esta página periódicamente para mantenerte informado sobre el uso de cookies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3">¿Tienes preguntas?</h3>
+                    <p class="mb-4">Si tienes alguna pregunta sobre nuestra Política de Cookies, no dudes en contactarnos.</p>
+                    <button class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition flex items-center">
+                        <i class="fas fa-headset mr-2"></i> Contactar al DPO
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t p-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center justify-between">
+                <div class="mb-4 md:mb-0 md:mr-6">
+                    <p class="text-gray-700">Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. Puede obtener más información en nuestra <a href="#" class="text-blue-600 hover:underline">Política de Cookies</a>.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                    <button id="accept-cookies" class="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition">
+                        Aceptar todas
+                    </button>
+                    <button id="reject-cookies" class="bg-white text-gray-700 py-2 px-6 rounded border hover:bg-gray-50 transition">
+                        Rechazar
+                    </button>
+                    <button id="configure-cookies" class="bg-white text-blue-600 py-2 px-6 rounded border hover:bg-blue-50 transition">
+                        Configurar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">MiBlog</a>
+                    <p class="mt-2 text-sm">Compartiendo conocimiento y proyectos.</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Enlaces</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                            <li><a href="#proyectos" class="hover:text-white transition">Proyectos</a></li>
+                            <li><a href="#blog" class="hover:text-white transition">Blog</a></li>
+                            <li><a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-medium mb-3">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/legal/privacidad.html" class="hover:text-white transition">Política de Privacidad</a></li>
+                            <li><a href="/legal/terminos.html" class="hover:text-white transition">Términos de Uso</a></li>
+                            <li><a href="/legal/cookies.html" class="hover:text-white transition">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 MiBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Cookie banner functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieBanner = document.querySelector('.cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const rejectBtn = document.getElementById('reject-cookies');
+            const configureBtn = document.getElementById('configure-cookies');
+            
+            // Check if cookies are already accepted
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 1000);
+            }
+            
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.classList.remove('show');
+            });
+            
+            rejectBtn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'false');
+                cookieBanner.classList.remove('show');
+            });
+            
+            configureBtn.addEventListener('click', () => {
+                alert('Aquí se abriría un modal para configurar las cookies individualmente');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Rendimiento en React | Blog de Desarrollo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+        
+        .demo-component {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            background-color: #f8fafc;
+        }
+        
+        .highlight {
+            background-color: #fffbdd;
+            padding: 0.2rem;
+            border-radius: 0.2rem;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #4f46e5;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">Optimización de Rendimiento en React</h1>
+                    <p class="text-xl opacity-90">Técnicas avanzadas para mejorar la velocidad de tus aplicaciones</p>
+                </div>
+                <div class="hidden md:block">
+                    <i class="fab fa-react text-6xl opacity-20"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold text-indigo-600">Mi Blog Dev</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-indigo-600">Inicio</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">React</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">JavaScript</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">Tutoriales</a>
+                </div>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center mb-6">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Autor" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold">Carlos Dev</p>
+                        <p class="text-gray-500 text-sm">Publicado el 15 de junio, 2023 · 8 min de lectura</p>
+                    </div>
+                </div>
+                
+                <div class="prose max-w-none">
+                    <p class="text-lg text-gray-700 mb-6">React es conocido por su alto rendimiento gracias al Virtual DOM, pero a medida que las aplicaciones crecen en complejidad, pueden aparecer cuellos de botella que afectan la experiencia del usuario. En este artículo exploraremos técnicas avanzadas para optimizar el rendimiento de tus aplicaciones React.</p>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Memorización con React.memo y useMemo</h2>
+                    <p>La memorización evita renderizados innecesarios al almacenar en caché los resultados de componentes y cálculos costosos.</p>
+                    
+                    <div class="demo-component">
+                        <h3 class="font-semibold mb-2">Demo: Componente sin vs con memorización</h3>
+                        <div class="flex flex-col md:flex-row gap-4 mb-4">
+                            <div class="flex-1">
+                                <p class="text-sm font-medium mb-1">Componente normal (se rerenderiza siempre)</p>
+                                <div id="normal-counter" class="p-4 bg-gray-100 rounded"></div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium mb-1">Componente memorizado (solo cambia cuando lo necesita)</p>
+                                <div id="memo-counter" class="p-4 bg-gray-100 rounded"></div>
+                            </div>
+                        </div>
+                        <button id="update-btn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Actualizar contador padre</button>
+                    </div>
+                    
+                    <div class="code-block mt-6">
+                        <pre><code>// Componente normal
+const NormalCounter = ({ count }) => {
+  console.log('NormalCounter se rerenderizó');
+  return &lt;div&gt;Contador: {count}&lt;/div&gt;;
+};
+
+// Componente memorizado
+const MemoCounter = React.memo(({ count }) => {
+  console.log('MemoCounter se rerenderizó');
+  return &lt;div&gt;Contador: {count}&lt;/div&gt;;
+});
+
+// Uso de useMemo para cálculos costosos
+const expensiveCalculation = useMemo(() => {
+  return computeExpensiveValue(a, b);
+}, [a, b]);</code></pre>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">2. useCallback para funciones estables</h2>
+                    <p>useCallback memoriza funciones para evitar recrearlas en cada render, especialmente útil cuando se pasan como props a componentes hijos memorizados.</p>
+                    
+                    <div class="code-block mt-4">
+                        <pre><code>const handleClick = useCallback(() => {
+  // Lógica del evento
+}, [dependencies]);
+
+// Sin useCallback (se recrea en cada render)
+const handleClick = () => {
+  // Lógica del evento
+};</code></pre>
+                    </div>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-blue-500 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    <span class="font-semibold">Tip profesional:</span> Solo usa useCallback cuando la función se pasa a componentes hijos memorizados o como dependencia de otros hooks. No abuses de él ya que tiene un costo de memoria.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">3. Lazy Loading y Code Splitting</h2>
+                    <p>React.lazy y Suspense permiten cargar componentes de forma diferida, reduciendo el tamaño del bundle inicial.</p>
+                    
+                    <div class="code-block mt-4">
+                        <pre><code>import { lazy, Suspense } from 'react';
+
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+function MyComponent() {
+  return (
+    &lt;Suspense fallback={&lt;div&gt;Cargando...&lt;/div&gt;}&gt;
+      &lt;LazyComponent /&gt;
+    &lt;/Suspense&gt;
+  );
+}</code></pre>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-triangle text-yellow-500 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <span class="font-semibold">Importante:</span> Para rutas en React Router, combina lazy loading con code splitting por rutas para máxima optimización.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">4. Virtualización de listas</h2>
+                    <p>Para listas largas, librerías como react-window o react-virtualized renderizan solo los elementos visibles.</p>
+                    
+                    <div class="demo-component">
+                        <h3 class="font-semibold mb-2">Comparación de rendimiento</h3>
+                        <div class="flex flex-col md:flex-row gap-4 mb-4">
+                            <div class="flex-1">
+                                <p class="text-sm font-medium mb-1">Lista normal (1000 items)</p>
+                                <div class="h-64 overflow-y-auto border p-2 bg-gray-50">
+                                    <div id="normal-list"></div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium mb-1">Lista virtualizada (1000 items)</p>
+                                <div class="h-64 overflow-y-auto border p-2 bg-gray-50">
+                                    <div id="virtualized-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block mt-4">
+                        <pre><code>import { FixedSizeList as List } from 'react-window';
+
+const Row = ({ index, style }) => (
+  &lt;div style={style}&gt;Item {index}&lt;/div&gt;
+);
+
+const MyList = () => (
+  &lt;List
+    height={400}
+    itemCount={1000}
+    itemSize={35}
+    width={300}
+  &gt;
+    {Row}
+  &lt;/List&gt;
+);</code></pre>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">5. Optimización del Context API</h2>
+                    <p>El Context API puede causar rerenderizados innecesarios si no se estructura correctamente.</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 mt-4">
+                        <div class="flex-1">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-red-800 mb-2">❌ Anti-patrón</h3>
+                                <div class="code-block">
+                                    <pre><code>// Un solo contexto para todo el estado
+&lt;AppContext.Provider value={{ user, theme, cart }}&gt;
+  {children}
+&lt;/AppContext.Provider&gt;</code></pre>
+                                </div>
+                                <p class="text-sm text-red-700 mt-2">Cualquier cambio en user, theme o cart rerenderiza todos los consumidores.</p>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-green-800 mb-2">✅ Mejor práctica</h3>
+                                <div class="code-block">
+                                    <pre><code>// Contextos separados por dominio
+&lt;UserContext.Provider value={user}&gt;
+  &lt;ThemeContext.Provider value={theme}&gt;
+    &lt;CartContext.Provider value={cart}&gt;
+      {children}
+    &lt;/CartContext.Provider&gt;
+  &lt;/ThemeContext.Provider&gt;
+&lt;/UserContext.Provider&gt;</code></pre>
+                                </div>
+                                <p class="text-sm text-green-700 mt-2">Los cambios solo afectan a los consumidores del contexto específico.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">6. Herramientas de análisis</h2>
+                    <p>Identifica cuellos de botella con estas herramientas:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-tachometer-alt text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">React DevTools Profiler</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Analiza el rendimiento de componentes y detecta renderizados innecesarios.</p>
+                        </div>
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-chart-line text-purple-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Chrome Performance Tab</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Graba y analiza la ejecución de JavaScript para encontrar funciones lentas.</p>
+                        </div>
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-green-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-weight-hanging text-green-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Webpack Bundle Analyzer</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Visualiza el tamaño de los bundles para identificar oportunidades de code splitting.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusión</h2>
+                    <p class="mb-4">Optimizar una aplicación React requiere un enfoque equilibrado:</p>
+                    <ul class="list-disc pl-6 space-y-2 mb-6">
+                        <li><span class="font-semibold">Primero mide</span> - No optimices sin datos</li>
+                        <li><span class="font-semibold">Enfócate en los cuellos de botella</span> - El 20% del código causa el 80% de los problemas</li>
+                        <li><span class="font-semibold">Prioriza la experiencia del usuario</span> - Optimiza lo que afecta directamente al usuario</li>
+                        <li><span class="font-semibold">Evita optimizaciones prematuras</span> - Primero haz que funcione, luego hazlo rápido</li>
+                    </ul>
+                    
+                    <div class="bg-indigo-50 rounded-lg p-6 mt-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                                <i class="fas fa-lightbulb text-indigo-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-indigo-800">¿Quieres profundizar más?</h3>
+                                <p class="text-indigo-700 mt-2">Consulta estos recursos adicionales:</p>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="text-indigo-600 hover:underline">Documentación oficial de React sobre optimización</a></li>
+                                    <li><a href="#" class="text-indigo-600 hover:underline">Patrones avanzados de renderizado</a></li>
+                                    <li><a href="#" class="text-indigo-600 hover:underline">Cómo estructurar contextos para máximo rendimiento</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 px-6 py-4 border-t">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-4">
+                        <button class="text-gray-500 hover:text-indigo-600">
+                            <i class="far fa-thumbs-up"></i> <span class="ml-1">125</span>
+                        </button>
+                        <button class="text-gray-500 hover:text-indigo-600">
+                            <i class="far fa-comment"></i> <span class="ml-1">23</span>
+                        </button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="text-gray-500 hover:text-indigo-600">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                        <button class="text-gray-500 hover:text-indigo-600">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="px-6 py-4 bg-white border-t">
+                <h3 class="font-semibold text-lg mb-4">Comentarios (3)</h3>
+                <div class="space-y-4">
+                    <div class="flex">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Usuario" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-semibold">María López</span>
+                                    <span class="text-xs text-gray-500">Hace 2 días</span>
+                                </div>
+                                <p class="text-gray-700">Excelente artículo, justo lo que necesitaba para optimizar mi aplicación. ¿Podrías hacer un tutorial más detallado sobre react-window?</p>
+                                <button class="text-sm text-indigo-600 mt-1">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Usuario" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-semibold">Juan Pérez</span>
+                                    <span class="text-xs text-gray-500">Hace 1 semana</span>
+                                </div>
+                                <p class="text-gray-700">Muy buen resumen de técnicas de optimización. Una pregunta: ¿Cómo manejarías la memorización en componentes que reciben children?</p>
+                                <button class="text-sm text-indigo-600 mt-1">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <textarea class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400" rows="3" placeholder="Añade un comentario..."></textarea>
+                    <button class="mt-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Publicar comentario</button>
+                </div>
+            </div>
+        </article>
+        
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Artículos relacionados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://source.unsplash.com/random/400x200/?code" alt="React Hooks" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-indigo-600">React</span>
+                        <h3 class="font-semibold text-lg mt-1 mb-2">Dominando los React Hooks</h3>
+                        <p class="text-gray-600 text-sm">Aprende a usar useEffect, useReducer y hooks personalizados como un profesional.</p>
+                        <div class="flex items-center mt-3 text-sm text-gray-500">
+                            <i class="far fa-clock mr-1"></i> 5 min de lectura
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://source.unsplash.com/random/400x200/?javascript" alt="JavaScript" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-indigo-600">JavaScript</span>
+                        <h3 class="font-semibold text-lg mt-1 mb-2">Patrones de Diseño en JavaScript</h3>
+                        <p class="text-gray-600 text-sm">Los patrones de diseño más útiles para escribir código mantenible y escalable.</p>
+                        <div class="flex items-center mt-3 text-sm text-gray-500">
+                            <i class="far fa-clock mr-1"></i> 7 min de lectura
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://source.unsplash.com/random/400x200/?web" alt="Web Performance" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-indigo-600">Performance</span>
+                        <h3 class="font-semibold text-lg mt-1 mb-2">Optimización Web Avanzada</h3>
+                        <p class="text-gray-600 text-sm">Técnicas más allá del código: CDN, caching, compresión y más.</p>
+                        <div class="flex items-center mt-3 text-sm text-gray-500">
+                            <i class="far fa-clock mr-1"></i> 6 min de lectura
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mi Blog Dev</h3>
+                    <p class="text-gray-400">Tutoriales, artículos y recursos para desarrolladores web.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categorías</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">React</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">JavaScript</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">CSS</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Performance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces útiles</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Documentación</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Herramientas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Comunidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cursos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Suscríbete</h4>
+                    <p class="text-gray-400 mb-2">Recibe los últimos artículos en tu correo.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Tu email" class="px-3 py-2 text-gray-800 rounded-l focus:outline-none w-full">
+                        <button class="bg-indigo-600 px-4 py-2 rounded-r hover:bg-indigo-700">Enviar</button>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Mi Blog Dev. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Demo de memorización
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contador padre
+            let parentCount = 0;
+            const updateBtn = document.getElementById('update-btn');
+            
+            // Componente normal
+            function renderNormalCounter(count) {
+                console.log('NormalCounter se rerenderizó');
+                document.getElementById('normal-counter').innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-sm text-gray-500">Componente normal</span>
+                            <div class="font-medium">Contador padre: ${parentCount}</div>
+                            <div class="font-medium">Contador hijo: ${count}</div>
+                        </div>
+                        <div class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Se rerenderiza siempre</div>
+                    </div>
+                `;
+            }
+            
+            // Componente memorizado (simulado)
+            function renderMemoCounter(count) {
+                // En una app real, React.memo evitaría este rerender
+                // Aquí simulamos el comportamiento con una condición
+                if (count !== lastMemoCount) {
+                    console.log('MemoCounter se rerenderizó (porque cambió su prop)');
+                    document.getElementById('memo-counter').innerHTML = `
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm text-gray-500">Componente memorizado</span>
+                                <div class="font-medium">Contador padre: ${parentCount}</div>
+                                <div class="font-medium">Contador hijo: ${count}</div>
+                            </div>
+                            <div class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Solo cambia cuando lo necesita</div>
+                        </div>
+                    `;
+                    lastMemoCount = count;
+                }
+            }
+            
+            let lastMemoCount = null;
+            
+            // Inicializar
+            renderNormalCounter(0);
+            renderMemoCounter(0);
+            
+            // Actualizar al hacer clic
+            updateBtn.addEventListener('click', function() {
+                parentCount++;
+                console.log('--- Actualizando contador padre ---');
+                renderNormalCounter(0); // Siempre se rerenderiza
+                renderMemoCounter(0); // Solo se rerenderiza si cambia el prop
+            });
+            
+            // Demo de lista virtualizada vs normal
+            const normalList = document.getElementById('normal-list');
+            const virtualizedList = document.getElementById('virtualized-list');
+            
+            // Lista normal (renderiza todos los items)
+            for (let i = 0; i < 1000; i++) {
+                const item = document.createElement('div');
+                item.className = 'py-1 px-2 border-b';
+                item.textContent = `Item ${i + 1}`;
+                normalList.appendChild(item);
+            }
+            
+            // Lista virtualizada (simulada)
+            const visibleItems = 10;
+            let startIndex = 0;
+            
+            function renderVirtualizedItems() {
+                virtualizedList.innerHTML = '';
+                for (let i = startIndex; i < startIndex + visibleItems; i++) {
+                    if (i >= 1000) continue;
+                    const item = document.createElement('div');
+                    item.className = 'py-1 px-2 border-b';
+                    item.textContent = `Item ${i + 1}`;
+                    virtualizedList.appendChild(item);
+                }
+            }
+            
+            renderVirtualizedItems();
+            
+            // Simular scroll
+            virtualizedList.parentElement.addEventListener('scroll', function() {
+                const scrollTop = this.scrollTop;
+                const itemHeight = 30; // Altura aproximada de cada item
+                const newStartIndex = Math.floor(scrollTop / itemHeight);
+                
+                if (newStartIndex !== startIndex) {
+                    startIndex = newStartIndex;
+                    renderVirtualizedItems();
+                    
+                    // Ajustar el padding para mantener el scroll height
+                    virtualizedList.style.paddingTop = `${startIndex * itemHeight}px`;
+                    virtualizedList.style.height = `${1000 * itemHeight - startIndex * itemHeight}px`;
+                }
+            });
+            
+            // Configurar altura inicial para el scroll
+            virtualizedList.style.height = `${1000 * 30}px`;
+        });
+    </script>
+</body>
+</html>
