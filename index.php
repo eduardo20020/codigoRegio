@@ -278,7 +278,7 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
                     <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                        <img src="/cerro2.png" 
                              alt="Foto de perfil" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -307,9 +307,7 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition inline-flex items-center">
-                        <i class="fas fa-file-alt mr-2"></i> Descargar CV
-                    </a>
+
                 </div>
             </div>
         </div>
@@ -359,7 +357,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Email</h4>
-                                    <p class="text-gray-400">contacto@midominio.com</p>
+                                    <p class="text-gray-400">codigoregiocontacto@gmail.com</p>
                                 </div>
                             </div>
                             
@@ -369,7 +367,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Teléfono</h4>
-                                    <p class="text-gray-400">+1 234 567 890</p>
+                                    <p class="text-gray-400">+52 8135906906</p>
                                 </div>
                             </div>
                             
@@ -379,22 +377,20 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Ubicación</h4>
-                                    <p class="text-gray-400">Ciudad, País</p>
+                                    <p class="text-gray-400">Monterrey, México</p>
                                 </div>
                             </div>
                         </div>
                         
                         <h3 class="text-xl font-semibold mt-10 mb-4">Sígueme</h3>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
+                            <a href="https://github.com/eduardo20020" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
+                            <a href="https://www.linkedin.com/in/brandon-sanchez-692930310/" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
-                                <i class="fab fa-twitter"></i>
-                            </a>
+
                             <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
                                 <i class="fab fa-instagram"></i>
                             </a>
@@ -410,7 +406,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-2xl font-bold gradient-text">MiBlog</a>
+                    <a href="#" class="text-2xl font-bold gradient-text">Codigo Regio</a>
                     <p class="mt-2 text-sm">Compartiendo conocimiento y proyectos.</p>
                 </div>
                 <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
