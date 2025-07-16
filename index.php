@@ -19,12 +19,26 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* MOBILE TYPEWRITER: quitar efecto en <640px para que sea legible */
+        @media (max-width: 639px) {
+            .typewriter {
+                animation: none !important;
+                border-right: none !important;
+                white-space: normal !important;
+                word-break: break-word;
+                width: 100% !important;
+                font-size: 1.125rem !important; /* text-lg */
+                text-align: left;
+            }
+        }
         .typewriter {
             overflow: hidden;
             border-right: .15em solid #3b82f6;
             white-space: nowrap;
             letter-spacing: .15em;
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            width: 100%;
+            max-width: 100%;
         }
         @keyframes typing {
             from { width: 0 }
@@ -39,45 +53,55 @@
 <body class="bg-gray-50 font-sans antialiased">
     <!-- Header/Navbar -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold gradient-text">Codigo Regio</a>
-            <nav class="hidden md:flex space-x-8">
+            <nav id="mainNav" class="hidden md:flex space-x-8 transition-all duration-300">
                 <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
                 <a href="#proyectos" class="text-gray-700 hover:text-blue-600 transition">Proyectos</a>
                 <a href="#blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
                 <a href="#sobre-mi" class="text-gray-700 hover:text-blue-600 transition">Sobre mí</a>
                 <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
             </nav>
-            <button class="md:hidden text-gray-700">
+            <button id="menuBtn" class="md:hidden text-gray-700">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
+        <!-- Mobile nav -->
+        <nav id="mobileNav" class="fixed top-0 left-0 right-0 bg-white shadow-md flex-col items-center space-y-4 px-8 py-8 z-50 hidden">
+            <button id="closeMobileNav" class="absolute top-4 right-4 text-2xl text-gray-700"><i class="fas fa-times"></i></button>
+            <a href="#inicio" class="block text-gray-700 hover:text-blue-600 transition text-xl">Inicio</a>
+            <a href="#proyectos" class="block text-gray-700 hover:text-blue-600 transition text-xl">Proyectos</a>
+            <a href="#blog" class="block text-gray-700 hover:text-blue-600 transition text-xl">Blog</a>
+            <a href="#sobre-mi" class="block text-gray-700 hover:text-blue-600 transition text-xl">Sobre mí</a>
+            <a href="#contacto" class="block text-gray-700 hover:text-blue-600 transition text-xl">Contacto</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hola, soy <span class="gradient-text">Brandon Sanchez</span></h1>
-                <div class="typewriter text-xl md:text-2xl text-gray-600 mb-6">
+    <section id="inicio" class="py-16 sm:py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    Hola, soy <span class="gradient-text">Brandon Sanchez</span>
+                </h1>
+                <div class="typewriter text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 max-w-full">
                     Desarrollador Web & Creador de Contenido
                 </div>
-                <p class="text-gray-600 mb-8 text-lg">
+                <p class="text-gray-600 mb-8 text-base sm:text-lg">
                     Comparto mis proyectos, experiencias y aprendizajes en el mundo del desarrollo web.
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#proyectos" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#proyectos" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg text-center">
                         Ver Proyectos
                     </a>
-                    <a href="#contacto" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
+                    <a href="#contacto" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-center">
                         Contactarme
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                    <img src="/cerro2.png" 
-                         alt="Foto de perfil" class="w-full h-full object-cover">
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <img src="/cerro2.png" alt="Foto de perfil" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -85,13 +109,12 @@
 
     <!-- Projects Section -->
     <section id="proyectos" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
             <h2 class="text-3xl font-bold text-center mb-4">Mis Proyectos</h2>
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
                 Aquí puedes encontrar algunos de mis trabajos recientes. Cada proyecto representa un desafío único y una oportunidad de aprendizaje.
             </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 relative">
                     <div class="relative h-64 overflow-hidden">
@@ -121,7 +144,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Project 2 -->
                 <div class="project-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 relative">
                     <div class="relative h-64 overflow-hidden">
@@ -150,7 +172,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Project 3 -->
                 <div class="project-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 relative">
                     <div class="relative h-64 overflow-hidden">
@@ -181,7 +202,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="text-center mt-12">
                 <a href="#" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition inline-flex items-center">
                     <i class="fas fa-folder-open mr-2"></i> Ver Todos los Proyectos
@@ -192,13 +212,12 @@
 
     <!-- Blog Section -->
     <section id="blog" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
             <h2 class="text-3xl font-bold text-center mb-4">Últimos Artículos</h2>
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
                 Comparto mis conocimientos, experiencias y reflexiones sobre desarrollo web, tecnología y más.
             </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Article 1 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
                     <div class="h-48 overflow-hidden">
@@ -220,7 +239,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Article 2 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
                     <div class="h-48 overflow-hidden">
@@ -242,7 +260,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Article 3 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
                     <div class="h-48 overflow-hidden">
@@ -265,7 +282,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="text-center mt-12">
                 <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg inline-flex items-center">
                     <i class="fas fa-book-open mr-2"></i> Ver Todos los Artículos
@@ -276,44 +292,42 @@
 
     <!-- About Me Section -->
     <section id="sobre-mi" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
-                    <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
                         <img src="/cerro2.png" 
                              alt="Foto de perfil" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="md:w-2/3 md:pl-12">
+                <div class="w-full md:w-2/3 md:pl-12">
                     <h2 class="text-3xl font-bold mb-6">Sobre Mí</h2>
-                    <p class="text-gray-600 mb-6 text-lg">
+                    <p class="text-gray-600 mb-6 text-base sm:text-lg">
                         Soy un apasionado desarrollador web con más de 5 años de experiencia creando soluciones digitales innovadoras. 
                         Me especializo en JavaScript, React y Node.js, pero siempre estoy aprendiendo nuevas tecnologías.
                     </p>
-                    <p class="text-gray-600 mb-6 text-lg">
+                    <p class="text-gray-600 mb-6 text-base sm:text-lg">
                         En este blog comparto mis proyectos personales, tutoriales y reflexiones sobre el mundo del desarrollo web. 
                         Creo firmemente en el aprendizaje continuo y en compartir conocimiento con la comunidad.
                     </p>
-                    
                     <div class="mb-8">
                         <h3 class="text-xl font-semibold mb-4">Mis Habilidades</h3>
                         <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
                             <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Laravel</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">ASP.NET</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">MySQL</span>
                             <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">HTML5</span>
                             <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">CSS3</span>
                             <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Tailwind</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
-                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Git</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">n8n</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
-
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">GIT</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">N8N</span>
                         </div>
                     </div>
-                    
-
                 </div>
             </div>
         </div>
@@ -321,14 +335,13 @@
 
     <!-- Contact Section -->
     <section id="contacto" class="py-16 bg-gray-900 text-white">
-        <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
             <h2 class="text-3xl font-bold text-center mb-4">Contáctame</h2>
             <p class="text-gray-300 text-center max-w-2xl mx-auto mb-12">
                 ¿Tienes un proyecto en mente o quieres colaborar? No dudes en contactarme.
             </p>
-            
             <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
+                <div class="w-full lg:w-1/2">
                     <form class="space-y-6">
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium">Tu Nombre</label>
@@ -351,11 +364,9 @@
                         </button>
                     </form>
                 </div>
-                
-                <div class="lg:w-1/2">
-                    <div class="bg-gray-800 p-8 rounded-xl h-full">
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-gray-800 p-8 rounded-xl h-full mt-10 lg:mt-0">
                         <h3 class="text-xl font-semibold mb-6">Información de Contacto</h3>
-                        
                         <div class="space-y-6">
                             <div class="flex items-start">
                                 <div class="flex-shrink-0 bg-blue-600 p-3 rounded-lg mr-4">
@@ -366,7 +377,6 @@
                                     <p class="text-gray-400">codigoregiocontacto@gmail.com</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="flex-shrink-0 bg-blue-600 p-3 rounded-lg mr-4">
                                     <i class="fas fa-phone-alt text-white"></i>
@@ -376,7 +386,6 @@
                                     <p class="text-gray-400">+52 8135906906</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="flex-shrink-0 bg-blue-600 p-3 rounded-lg mr-4">
                                     <i class="fas fa-map-marker-alt text-white"></i>
@@ -387,7 +396,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <h3 class="text-xl font-semibold mt-10 mb-4">Sígueme</h3>
                         <div class="flex space-x-4">
                             <a href="https://github.com/eduardo20020" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
@@ -396,7 +404,6 @@
                             <a href="https://www.linkedin.com/in/brandon-sanchez-692930310/" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-
                             <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
                                 <i class="fab fa-instagram"></i>
                             </a>
@@ -409,13 +416,13 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
                     <a href="#" class="text-2xl font-bold gradient-text">Codigo Regio</a>
                     <p class="mt-2 text-sm">Compartiendo conocimiento y proyectos.</p>
                 </div>
-                <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
+                <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0 text-center md:text-left">
                     <div>
                         <h4 class="text-white font-medium mb-3">Enlaces</h4>
                         <ul class="space-y-2">
@@ -442,26 +449,18 @@
     </footer>
 
     <script>
-        // Simple JavaScript for mobile menu toggle
-        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
-            const nav = document.querySelector('nav.md\\:flex');
-            nav.classList.toggle('hidden');
-            nav.classList.toggle('flex');
-            nav.classList.toggle('flex-col');
-            nav.classList.toggle('absolute');
-            nav.classList.toggle('top-16');
-            nav.classList.toggle('left-0');
-            nav.classList.toggle('right-0');
-            nav.classList.toggle('bg-white');
-            nav.classList.toggle('p-4');
-            nav.classList.toggle('space-y-4');
-            nav.classList.toggle('space-x-8');
-            nav.classList.toggle('shadow-md');
-        });
+        // Mobile nav toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMobileNav = document.getElementById('closeMobileNav');
+        menuBtn.addEventListener('click', () => mobileNav.classList.remove('hidden'));
+        closeMobileNav.addEventListener('click', () => mobileNav.classList.add('hidden'));
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                // Si el menú móvil está abierto, ciérralo al hacer click en un link
+                if (!mobileNav.classList.contains('hidden')) mobileNav.classList.add('hidden');
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
