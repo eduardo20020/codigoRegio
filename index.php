@@ -27,7 +27,7 @@
 <meta name="geo.placename" content="Monterrey">
 <meta name="geo.position" content="25.6866;-100.3161">
 <meta name="ICBM" content="25.6866, -100.3161">
-    <title>Mi Portafolio Creativo</title>
+    <title>Desarrollo web en Monterrey</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387562831671712"
      crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -78,7 +78,7 @@
     <!-- Header/Navbar -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">Codigo Regio</a>
+            <a href="/" class="text-2xl font-bold gradient-text">Codigo Regio</a>
             <nav id="mainNav" class="hidden md:flex space-x-8 transition-all duration-300">
                 <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
                 <a href="#proyectos" class="text-gray-700 hover:text-blue-600 transition">Proyectos</a>
