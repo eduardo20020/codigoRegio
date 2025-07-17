@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5298299662458918"
+     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta SEO principal -->
-<meta name="description" content="Desarrollo web profesional en Monterrey, Nuevo León. Creamos soluciones web a la medida para pequeñas y grandes empresas, automatización de procesos y sistemas digitales personalizados. ¡Impulsa tu negocio con tecnología y creatividad!">
-<meta name="keywords" content="desarrollador web, Monterrey, Nuevo León, automatización, soluciones empresariales, sistemas a medida, desarrollo de software, páginas web, web Monterrey, automatización de flujos, diseño web, digitalización, empresas, programación, tecnología, consultoría web">
-<meta name="author" content="Brandon Sanchez">
-<meta name="robots" content="index, follow">
+    <meta name="description" content="Desarrollo web profesional en Monterrey, Nuevo León. Creamos soluciones web a la medida para pequeñas y grandes empresas, automatización de procesos y sistemas digitales personalizados. ¡Impulsa tu negocio con tecnología y creatividad!">
+    <meta name="keywords" content="desarrollador web, Monterrey, Nuevo León, automatización, soluciones empresariales, sistemas a medida, desarrollo de software, páginas web, web Monterrey, automatización de flujos, diseño web, digitalización, empresas, programación, tecnología, consultoría web">
+    <meta name="author" content="Brandon Sanchez">
+    <meta name="robots" content="index, follow">
 
-<!-- Meta Open Graph para Facebook/LinkedIn -->
-<meta property="og:title" content="Desarrollador Web en Monterrey - Soluciones a Medida y Automatización | Codigo Regio">
-<meta property="og:description" content="Soy Brandon Sanchez, experto en desarrollo web y automatización de procesos en Monterrey. Potencia tu empresa con soluciones digitales personalizadas, desde páginas web hasta integración de flujos de trabajo.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://codigoregio.com.mx/"> <!-- Cambia por tu dominio real -->
-<meta property="og:image" content="https://codigoregio.com.mx/cerro2.png"> <!-- Cambia por tu imagen destacada real -->
+    <!-- Meta Open Graph para Facebook/LinkedIn -->
+    <meta property="og:title" content="Desarrollador Web en Monterrey - Soluciones a Medida y Automatización | Codigo Regio">
+    <meta property="og:description" content="Soy Brandon Sanchez, experto en desarrollo web y automatización de procesos en Monterrey. Potencia tu empresa con soluciones digitales personalizadas, desde páginas web hasta integración de flujos de trabajo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codigoregio.com.mx/"> <!-- Cambia por tu dominio real -->
+    <meta property="og:image" content="https://codigoregio.com.mx/cerro2.png"> <!-- Cambia por tu imagen destacada real -->
 
-<!-- Meta Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Desarrollador Web en Monterrey | Soluciones Personalizadas y Automatización">
-<meta name="twitter:description" content="Servicios de desarrollo web y digitalización de procesos para empresas en Monterrey y toda México. Automatiza, crece y digitaliza tu empresa con Codigo Regio.">
-<meta name="twitter:image" content="https://codigoregio.com.mx/cerro2.png"> <!-- Cambia por tu imagen destacada real -->
+    <!-- Meta Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Desarrollador Web en Monterrey | Soluciones Personalizadas y Automatización">
+    <meta name="twitter:description" content="Servicios de desarrollo web y digitalización de procesos para empresas en Monterrey y toda México. Automatiza, crece y digitaliza tu empresa con Codigo Regio.">
+    <meta name="twitter:image" content="https://codigoregio.com.mx/cerro2.png"> <!-- Cambia por tu imagen destacada real -->
 
-<!-- Local SEO y empresa -->
-<meta name="geo.region" content="MX-NLE">
-<meta name="geo.placename" content="Monterrey">
-<meta name="geo.position" content="25.6866;-100.3161">
-<meta name="ICBM" content="25.6866, -100.3161">
+    <!-- Local SEO y empresa -->
+    <meta name="geo.region" content="MX-NLE">
+    <meta name="geo.placename" content="Monterrey">
+    <meta name="geo.position" content="25.6866;-100.3161">
+    <meta name="ICBM" content="25.6866, -100.3161">
     <title>Desarrollo web en Monterrey</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387562831671712"
-     crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -307,7 +307,7 @@
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg inline-flex items-center">
+                <a href="/articulos/index.php" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg inline-flex items-center">
                     <i class="fas fa-book-open mr-2"></i> Ver Todos los Artículos
                 </a>
             </div>
@@ -327,8 +327,8 @@
                 <div class="w-full md:w-2/3 md:pl-12">
                     <h2 class="text-3xl font-bold mb-6">Sobre Mí</h2>
                     <p class="text-gray-600 mb-6 text-base sm:text-lg">
-                        Soy un apasionado desarrollador web con más de 5 años de experiencia creando soluciones digitales innovadoras. 
-                        Me especializo en JavaScript, React y Node.js, pero siempre estoy aprendiendo nuevas tecnologías.
+                        Soy un apasionado desarrollador web con más de 2 años de experiencia creando soluciones digitales innovadoras. 
+                        Me especializo en ASP.NET (C#) , Laravel (PHP) y bases de datos SQL pero siempre estoy aprendiendo nuevas tecnologías.
                     </p>
                     <p class="text-gray-600 mb-6 text-base sm:text-lg">
                         En este blog comparto mis proyectos personales, tutoriales y reflexiones sobre el mundo del desarrollo web. 
