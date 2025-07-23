@@ -15,14 +15,14 @@
     <meta property="og:title" content="Desarrollador Web en Monterrey - Soluciones a Medida y Automatización | Codigo Regio">
     <meta property="og:description" content="Soy Brandon Sanchez, experto en desarrollo web y automatización de procesos en Monterrey. Potencia tu empresa con soluciones digitales personalizadas, desde páginas web hasta integración de flujos de trabajo.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://codigoregio.com.mx/"> <!-- Cambia por tu dominio real -->
-    <meta property="og:image" content="https://codigoregio.com.mx/cerro2.png"> <!-- Cambia por tu imagen destacada real -->
+    <meta property="og:url" content="https://codigoregio.com.mx/">
+    <meta property="og:image" content="https://codigoregio.com.mx/cerro2.png">
 
     <!-- Meta Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Desarrollador Web en Monterrey | Soluciones Personalizadas y Automatización">
     <meta name="twitter:description" content="Servicios de desarrollo web y digitalización de procesos para empresas en Monterrey y toda México. Automatiza, crece y digitaliza tu empresa con Codigo Regio.">
-    <meta name="twitter:image" content="https://codigoregio.com.mx/cerro2.png"> <!-- Cambia por tu imagen destacada real -->
+    <meta name="twitter:image" content="https://codigoregio.com.mx/cerro2.png">
 
     <!-- Local SEO y empresa -->
     <meta name="geo.region" content="MX-NLE">
@@ -43,7 +43,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* MOBILE TYPEWRITER: quitar efecto en <640px para que sea legible */
         @media (max-width: 639px) {
             .typewriter {
                 animation: none !important;
@@ -51,7 +50,7 @@
                 white-space: normal !important;
                 word-break: break-word;
                 width: 100% !important;
-                font-size: 1.125rem !important; /* text-lg */
+                font-size: 1.125rem !important;
                 text-align: left;
             }
         }
@@ -111,15 +110,19 @@
                 <div class="typewriter text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 max-w-full">
                     Desarrollo Web & Creación de Contenido
                 </div>
+                <p class="text-gray-600 mb-4 text-base sm:text-lg">
+                    <strong>¿Tu empresa necesita un sistema digital, una página web moderna o una solución a la medida?</strong>
+                </p>
                 <p class="text-gray-600 mb-8 text-base sm:text-lg">
-                    Comparto mis proyectos, experiencias y aprendizajes en el mundo del desarrollo web.
+                    Ayudamos a empresas de todos los tamaños a digitalizar y automatizar sus procesos, crear portales web profesionales y desarrollar software personalizado que se adapta 100% a sus necesidades. <br>
+                    <span class="font-semibold">Desde sitios corporativos hasta sistemas internos y automatización de flujos empresariales: tu idea, nuestra tecnología.</span>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#proyectos" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg text-center">
                         Ver Proyectos
                     </a>
                     <a href="#contacto" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition text-center">
-                        Contactarme
+                        Cotiza tu Solución
                     </a>
                 </div>
             </div>
@@ -134,9 +137,9 @@
     <!-- Projects Section -->
     <section id="proyectos" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-2 sm:px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Mis Proyectos</h2>
+            <h2 class="text-3xl font-bold text-center mb-4">Soluciones y Proyectos Empresariales</h2>
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-                Aquí puedes encontrar algunos de mis trabajos recientes. Cada proyecto representa un desafío único y una oportunidad de aprendizaje.
+                Desarrollamos soluciones digitales a la medida para empresas: desde páginas web institucionales y portales de clientes, hasta automatización de procesos y sistemas internos. Nos adaptamos a tus requerimientos para brindarte resultados reales y escalables.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
@@ -145,8 +148,8 @@
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                              alt="Proyecto 1" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                         <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition duration-300 transform translate-y-4">
-                            <h3 class="text-white text-xl font-bold mb-2">Gestion</h3>
-                            <p class="text-gray-300 text-center px-4 mb-4">Sistema de gestion de tickets</p>
+                            <h3 class="text-white text-xl font-bold mb-2">Gestión</h3>
+                            <p class="text-gray-300 text-center px-4 mb-4">Sistema de gestión de tickets para empresas que buscan optimizar el soporte interno y el seguimiento de requerimientos.</p>
                             <div class="flex space-x-2">
                                 <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Laravel</span>
                                 <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">PHP</span>
@@ -158,8 +161,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Sistema de gestion de tickets</h3>
-                        <p class="text-gray-600 mb-4">Plataforma de soporte de TI para gestion de tickets y requerimientos.</p>
+                        <h3 class="text-xl font-semibold mb-2">Sistema de gestión de tickets</h3>
+                        <p class="text-gray-600 mb-4">Plataforma personalizada para soporte de TI, centralizando solicitudes y agilizando la resolución de incidentes empresariales.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 <i class="fas fa-external-link-alt mr-2"></i> Visitar
@@ -174,8 +177,8 @@
                         <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" 
                              alt="Proyecto 2" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                         <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition duration-300 transform translate-y-4">
-                            <h3 class="text-white text-xl font-bold mb-2">Automatizacion</h3>
-                            <p class="text-gray-300 text-center px-4 mb-4">Automatizacion de flujos de trabajo</p>
+                            <h3 class="text-white text-xl font-bold mb-2">Automatización</h3>
+                            <p class="text-gray-300 text-center px-4 mb-4">Automatización de flujos empresariales para ahorrar tiempo y minimizar errores humanos en tareas repetitivas.</p>
                             <div class="flex space-x-2">
                                 <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">N8N</span>
                                 <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Python</span>
@@ -186,8 +189,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Automatizacion de flujos de trabajo con N8N</h3>
-                        <p class="text-gray-600 mb-4">Automatizamos procesos de negocio utilizando N8N como herramienta principal.</p>
+                        <h3 class="text-xl font-semibold mb-2">Automatización de procesos con N8N</h3>
+                        <p class="text-gray-600 mb-4">Creamos soluciones que integran sistemas y automatizan tareas administrativas, ventas, recursos humanos y más, utilizando herramientas modernas.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 <i class="fas fa-external-link-alt mr-2"></i> Visitar
@@ -203,7 +206,7 @@
                              alt="Proyecto 3" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                         <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition duration-300 transform translate-y-4">
                             <h3 class="text-white text-xl font-bold mb-2">Dashboard</h3>
-                            <p class="text-gray-300 text-center px-4 mb-4">Panel de control con visualización de datos en tiempo real</p>
+                            <p class="text-gray-300 text-center px-4 mb-4">Paneles de control personalizados para visualizar en tiempo real los indicadores clave de tu empresa.</p>
                             <div class="flex space-x-2">
                                 <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
                                 <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">D3.js</span>
@@ -215,8 +218,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Dashboard Analítico</h3>
-                        <p class="text-gray-600 mb-4">Visualización de datos empresariales con gráficos interactivos y exportación.</p>
+                        <h3 class="text-xl font-semibold mb-2">Dashboard Analítico Empresarial</h3>
+                        <p class="text-gray-600 mb-4">Desarrollamos dashboards a la medida para monitorear ventas, inventarios y operaciones, conectando con tus sistemas y mostrando la información más relevante para la toma de decisiones.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 <i class="fas fa-external-link-alt mr-2"></i> Visitar
@@ -324,35 +327,37 @@
                              alt="Foto de perfil" class="w-full h-full object-cover">
                     </div>
                 </div>
-<div class="w-full md:w-2/3 md:pl-12">
-    <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
-    <p class="text-gray-600 mb-6 text-base sm:text-lg">
-        Somos una empresa apasionada por el desarrollo web, con más de 3 años de experiencia creando soluciones digitales innovadoras para nuestros clientes. 
-        Nos especializamos en ASP.NET (C#), Laravel (PHP) y bases de datos SQL, pero siempre estamos aprendiendo nuevas tecnologías para ofrecer lo mejor.
-    </p>
-    <p class="text-gray-600 mb-6 text-base sm:text-lg">
-        En este blog compartimos nuestros proyectos, tutoriales y reflexiones sobre el mundo del desarrollo web. 
-        Creemos firmemente en el aprendizaje continuo y en compartir conocimiento con la comunidad.
-    </p>
-    <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4">Nuestras Habilidades</h3>
-        <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
-            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
-            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
-            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
-            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Laravel</span>
-            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">ASP.NET</span>
-            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
-            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">MySQL</span>
-            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">HTML5</span>
-            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">CSS3</span>
-            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Tailwind</span>
-            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">GIT</span>
-            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">N8N</span>
-        </div>
-    </div>
-</div>
+                <div class="w-full md:w-2/3 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+                    <p class="text-gray-600 mb-6 text-base sm:text-lg">
+                        Somos especialistas en crear <strong>soluciones web y sistemas digitales a la medida</strong> para empresas en Monterrey y toda México. Nos enfocamos en entender a fondo tus procesos, retos y objetivos para construir plataformas que realmente impulsen el crecimiento y la eficiencia de tu negocio.
+                    </p>
+                    <p class="text-gray-600 mb-6 text-base sm:text-lg">
+                        ¿Necesitas digitalizar un proceso, automatizar tareas o tener control total de tu información? Nuestro equipo te acompaña desde la idea hasta la implementación, con soporte continuo y asesoría tecnológica.
+                    </p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Nuestras Habilidades</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">ASP.NET</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">MySQL</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">HTML5</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">CSS3</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Tailwind</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">GIT</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">N8N</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <span class="font-medium">¡Impulsa tu empresa con tecnología hecha a la medida! </span>
+                        Escríbenos y descubre cómo podemos ayudarte a digitalizar, automatizar y optimizar tu organización.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -428,9 +433,7 @@
                             <a href="https://www.linkedin.com/in/brandon-sanchez-692930310/" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -483,7 +486,6 @@
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                // Si el menú móvil está abierto, ciérralo al hacer click en un link
                 if (!mobileNav.classList.contains('hidden')) mobileNav.classList.add('hidden');
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
