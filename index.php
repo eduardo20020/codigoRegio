@@ -83,7 +83,7 @@
                 <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
                 <a href="#proyectos" class="text-gray-700 hover:text-blue-600 transition">Proyectos</a>
                 <a href="#blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
-                <a href="#sobre-mi" class="text-gray-700 hover:text-blue-600 transition">Sobre mí</a>
+                <a href="#sobre-mi" class="text-gray-700 hover:text-blue-600 transition">Sobre nosotros</a>
                 <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
             </nav>
             <button id="menuBtn" class="md:hidden text-gray-700">
@@ -96,7 +96,7 @@
             <a href="#inicio" class="block text-gray-700 hover:text-blue-600 transition text-xl">Inicio</a>
             <a href="#proyectos" class="block text-gray-700 hover:text-blue-600 transition text-xl">Proyectos</a>
             <a href="#blog" class="block text-gray-700 hover:text-blue-600 transition text-xl">Blog</a>
-            <a href="#sobre-mi" class="block text-gray-700 hover:text-blue-600 transition text-xl">Sobre mí</a>
+            <a href="#sobre-mi" class="block text-gray-700 hover:text-blue-600 transition text-xl">Sobre nosotros</a>
             <a href="#contacto" class="block text-gray-700 hover:text-blue-600 transition text-xl">Contacto</a>
         </nav>
     </header>
@@ -106,10 +106,10 @@
         <div class="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
             <div class="w-full md:w-1/2 mt-8 md:mt-0">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                    Hola, soy <span class="gradient-text">Brandon Sanchez</span>
+                    Hola, somos <span class="gradient-text">Codigo Regio</span>
                 </h1>
                 <div class="typewriter text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 max-w-full">
-                    Desarrollador Web & Creador de Contenido
+                    Desarrollo Web & Creación de Contenido
                 </div>
                 <p class="text-gray-600 mb-8 text-base sm:text-lg">
                     Comparto mis proyectos, experiencias y aprendizajes en el mundo del desarrollo web.
@@ -159,7 +159,7 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Sistema de gestion de tickets</h3>
-                        <p class="text-gray-600 mb-4">Plataforma de e-commerce con sistema de recomendaciones y análisis de datos.</p>
+                        <p class="text-gray-600 mb-4">Plataforma de soporte de TI para gestion de tickets y requerimientos.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 <i class="fas fa-external-link-alt mr-2"></i> Visitar
@@ -175,7 +175,7 @@
                              alt="Proyecto 2" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                         <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transition duration-300 transform translate-y-4">
                             <h3 class="text-white text-xl font-bold mb-2">Automatizacion</h3>
-                            <p class="text-gray-300 text-center px-4 mb-4">Plataforma para compartir contenido multimedia</p>
+                            <p class="text-gray-300 text-center px-4 mb-4">Automatizacion de flujos de trabajo</p>
                             <div class="flex space-x-2">
                                 <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">N8N</span>
                                 <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Python</span>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">Automatizacion de flujos de trabajo con N8N</h3>
-                        <p class="text-gray-600 mb-4">Comunidad para compartir fotografías con sistema de votación y comentarios.</p>
+                        <p class="text-gray-600 mb-4">Automatizamos procesos de negocio utilizando N8N como herramienta principal.</p>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 flex items-center">
                                 <i class="fas fa-external-link-alt mr-2"></i> Visitar
@@ -324,35 +324,35 @@
                              alt="Foto de perfil" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="w-full md:w-2/3 md:pl-12">
-                    <h2 class="text-3xl font-bold mb-6">Sobre Mí</h2>
-                    <p class="text-gray-600 mb-6 text-base sm:text-lg">
-                        Soy un apasionado desarrollador web con más de 2 años de experiencia creando soluciones digitales innovadoras. 
-                        Me especializo en ASP.NET (C#) , Laravel (PHP) y bases de datos SQL pero siempre estoy aprendiendo nuevas tecnologías.
-                    </p>
-                    <p class="text-gray-600 mb-6 text-base sm:text-lg">
-                        En este blog comparto mis proyectos personales, tutoriales y reflexiones sobre el mundo del desarrollo web. 
-                        Creo firmemente en el aprendizaje continuo y en compartir conocimiento con la comunidad.
-                    </p>
-                    <div class="mb-8">
-                        <h3 class="text-xl font-semibold mb-4">Mis Habilidades</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Laravel</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">ASP.NET</span>
-                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
-                            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">MySQL</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">HTML5</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">CSS3</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Tailwind</span>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">GIT</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">N8N</span>
-                        </div>
-                    </div>
-                </div>
+<div class="w-full md:w-2/3 md:pl-12">
+    <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+    <p class="text-gray-600 mb-6 text-base sm:text-lg">
+        Somos una empresa apasionada por el desarrollo web, con más de 3 años de experiencia creando soluciones digitales innovadoras para nuestros clientes. 
+        Nos especializamos en ASP.NET (C#), Laravel (PHP) y bases de datos SQL, pero siempre estamos aprendiendo nuevas tecnologías para ofrecer lo mejor.
+    </p>
+    <p class="text-gray-600 mb-6 text-base sm:text-lg">
+        En este blog compartimos nuestros proyectos, tutoriales y reflexiones sobre el mundo del desarrollo web. 
+        Creemos firmemente en el aprendizaje continuo y en compartir conocimiento con la comunidad.
+    </p>
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Nuestras Habilidades</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">C#</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">PHP</span>
+            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">Python</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Laravel</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">ASP.NET</span>
+            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">SQL Server</span>
+            <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full">MySQL</span>
+            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">HTML5</span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">CSS3</span>
+            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">Tailwind</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">GIT</span>
+            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full">N8N</span>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </section>
